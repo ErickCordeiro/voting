@@ -90,7 +90,7 @@
 
                 <div class="mt-8">
                     <button
-                        class="w-20 bg-blue text-white border border-blue hover:border-blue font-bold text-xxs uppercase rounded-xl px-4 py-3 transition duration-150 ease-in">Voted</button>
+                        class="w-20 bg-blue text-white border border-blue hover:border-blue hover:bg-blue-hover font-bold text-xxs uppercase rounded-xl px-4 py-3 transition duration-150 ease-in">Voted</button>
                 </div>
             </div>
             <div class="flex px-2 py-6">
