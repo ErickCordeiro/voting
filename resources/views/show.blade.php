@@ -9,14 +9,14 @@
     </div>
 
     <div class="idea-container bg-white rounded-xl flex mt-4">
-        <div class="flex flex-1 px-4 py-6">
+        <div class="flex flex-col md:flex-row flex-1 px-4 py-6">
             <div class="flex-none">
                 <a href="#">
                     <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar"
                         class="w-14 h-14 rounded-xl">
                 </a>
             </div>
-            <div class="w-full mx-4">
+            <div class="w-full md:mx-4 mt-3 md:mt-0">
                 <h4 class="text-xl font-semibold">
                     <a href="#" class="hover:underline">A random title can go here</a>
                 </h4>
@@ -30,10 +30,10 @@
                     exercitationem atque animi dolore! Maxime nobis natus maiores eius quae, iure nesciunt
                     aperiam.
                 </div>
-                <div class="flex items-center justify-between mt-6">
-                    <div class="flex items-center text-xs font-semibold space-x-2 text-gray-400">
-                        <div class="font-bold text-gray-900">Erick Cordeiro</div>
-                        <div>&bull;</div>
+                <div class="flex flex-col md:flex-row md:items-center justify-between mt-6">
+                    <div class="flex items-center text-xs font-semibold space-x-2 text-gray-400 mb-4">
+                        <div class="hidden md:block font-bold text-gray-900">Erick Cordeiro</div>
+                        <div class="hidden md:block">&bull;</div>
                         <div>10 hours ago</div>
                         <div>&bull;</div>
                         <div>Category 1</div>
@@ -55,7 +55,7 @@
                             </svg>
                             <ul x-cloak x-show.transition.origin.top.left="isOpen" @click.away="isOpen = false"
                                 @keydown.escape.window="isOpen = false"
-                                class="absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3 ml-8">
+                                class="absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3 ml-8 z-10 md:ml-8 top-8 md:top-6 right-0 md:left-0">
                                 <li><a href="#"
                                         class="hover:bg-gray-100 block trasition duration-150 ease-in px-5 py-3">Mark
                                         as Spam</a></li>
@@ -65,13 +65,22 @@
                             </ul>
                         </button>
                     </div>
+
+                    <div class="flex items-center md:hidden mt-4 md:mt-0">
+                        <div class="bg-gray-100 text-center rounded-xl h-10 px-4 py-2 pr-8">
+                            <div class="text-sm font-bold leading-none">12</div>
+                            <div class="text-xxs font-semibold leading-none text-gray-400">Votes</div>
+                        </div>
+                        <button
+                            class="w-20 bg-gray-200 border border-gray-200 font-bold text-xxs uppercase rounded-xl hover:border-gray-400 transition duration-150 ease-in px-4 py-3 -mx-5">Vote</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div><!-- end idea-container -->
 
-    <div class="buttons-container flex items-center justify-between mt-6">
-        <div class="flex items-center space-x-4 mr-6">
+    <div class="buttons-container flex items-center justify-end md:justify-between mt-6">
+        <div class="flex items-center space-x-4 md:mr-6">
             <div class="relative" x-data="{ isOpen: false }">
                 <button type="button" @click="isOpen = !isOpen"
                     class="flex items-center justify-center h-11 w-32 text-sm bg-blue font-semibold rounded-xl border border-blue hover:bg-blue-hover
@@ -80,8 +89,9 @@
                 </button>
                 <div x-cloak x-show.transition.origin.top.left="isOpen" @click.away="isOpen = false"
                     @keydown.escape.window="isOpen = false"
-                    class="absolute z-10 w-104 text-left font-semibold text-sm bg-white shadow-dialog rounded-xl mt-2">
-                    <form action="#" class="space-y-4 px-4 py-6">
+                    class="absolute z-10 w-96 text-left font-semibold text-sm bg-white shadow-dialog rounded-xl mt-2 md:ml-8 top-10
+                    md:top-6 md:left-0 -left-24">
+                    <form action="#" class="space-y-4 px-4 py-6 ">
                         <div>
                             <textarea name="post_comment" id="post_comment" cols="30" rows="4"
                                 class="w-full text-sm bg-gray-100 rounded-xl placholder-gray-900 border-none px-4 py-2"
@@ -118,7 +128,8 @@
                 </button>
                 <div x-cloak x-show.transition.origin.top.left="isOpen" @click.away="isOpen = false"
                     @keydown.escape.window="isOpen = false"
-                    class="absolute z-20 w-76 text-left font-semibold text-sm bg-white shadow-dialog rounded-xl mt-2">
+                    class="absolute z-20 w-76 text-left font-semibold text-sm bg-white shadow-dialog rounded-xl mt-2 md:ml-8 top-10
+                    md:top-6 right-0 md:left-0">
                     <form action="#" class="space-y-4 px-4 py-6">
                         <div class="space-y-2">
                             <div>
@@ -194,7 +205,7 @@
             </div>
         </div>
 
-        <div class="flex items-center space-x-3">
+        <div class="hidden md:flex items-center space-x-3">
             <div class="bg-white font-semibold text-center rounded-xl px-3 py-2">
                 <div class="text-xl leading-snug">12</div>
                 <div class="text-gray-400 text-xs leading-none">Votes</div>
@@ -207,16 +218,16 @@
         </div>
     </div><!-- end buttons container -->
 
-    <div class="comments-container relative space-y-6 ml-22 pt-4 my-8 mt-1">
+    <div class="comments-container relative space-y-6 ml-14 pt-4 my-8 mt-1">
         <div class="comment-container relative bg-white rounded-xl flex mt-4">
-            <div class="flex flex-1 px-4 py-6">
-                <div class="flex-none">
+            <div class="flex flex-col md:flex-row flex-1 px-4 py-6">
+                <div class="flex-none mx-2">
                     <a href="#">
                         <img src="https://source.unsplash.com/200x200/?face&crop=face&v=2" alt="avatar"
                             class="w-14 h-14 rounded-xl">
                     </a>
                 </div>
-                <div class="w-full mx-4">
+                <div class="w-full mx-2 mt-4">
                     <div class="text-gray-600">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quo quisquam tempore modi iure
                         at possimus fugit placeat perferendis, ducimus aperiam eaque excepturi sapiente atque quos!
@@ -239,7 +250,8 @@
                                 </svg>
                                 <ul x-cloak x-show.transition.origin.top.left="isOpen" @click.away="isOpen = false"
                                     @keydown.escape.window="isOpen = false"
-                                    class="z-10 absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3 ml-8">
+                                    class="z-10 absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3 md:ml-8 top-10
+                                    md:top-6 right-0 md:left-0">
                                     <li><a href="#"
                                             class="hover:bg-gray-100 block trasition duration-150 ease-in px-5 py-3">Mark
                                             as Spam</a></li>
@@ -255,15 +267,15 @@
         </div><!-- end comment-container -->
 
         <div class="comment-container relative is-admin bg-white rounded-xl flex mt-4">
-            <div class="flex flex-1 px-4 py-6">
-                <div class="flex-none text-center">
+            <div class="flex flex-1 flex-col md:flex-row px-4 py-6">
+                <div class="flex-none md:text-center text-left mx-2 md:mx-0">
                     <a href="#">
                         <img src="https://source.unsplash.com/200x200/?face&crop=face&v=3" alt="avatar"
                             class="w-14 h-14 rounded-xl">
                     </a>
-                    <span class="text-blue text-xxs uppercase mt-2 block font-semibold">Admin</span>
+                    <span class="text-blue text-xxs uppercase mt-2 block font-semibold ml-2 md:ml-0">Admin</span>
                 </div>
-                <div class="w-full mx-4">
+                <div class="w-full mx-2 md:mx-4 mt-4">
                     <h4 class="text-xl font-semibold mb-3">
                         <a href="#" class="hover:underline">Status Changed to "Under Consideration"</a>
                     </h4>
@@ -289,7 +301,8 @@
                                 </svg>
                                 <ul x-cloak x-show.transition.origin.top.left="isOpen" @click.away="isOpen = false"
                                     @keydown.escape.window="isOpen = false"
-                                    class="absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3 ml-8">
+                                    class="absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3
+                                    md:ml-8 top-10 md:top-6 right-0 md:left-0 z-10">
                                     <li><a href="#"
                                             class="hover:bg-gray-100 block trasition duration-150 ease-in px-5 py-3">Mark
                                             as Spam</a></li>
@@ -306,14 +319,14 @@
 
 
         <div class="comment-container relative bg-white rounded-xl flex mt-4">
-            <div class="flex flex-1 px-4 py-6">
-                <div class="flex-none">
+            <div class="flex flex-col md:flex-row flex-1 px-4 py-6">
+                <div class="flex-none mx-2 md:mx-0">
                     <a href="#">
                         <img src="https://source.unsplash.com/200x200/?face&crop=face&v=5" alt="avatar"
                             class="w-14 h-14 rounded-xl">
                     </a>
                 </div>
-                <div class="w-full mx-4">
+                <div class="w-full mx-2 md:mx-4 mt-4">
                     <div class="text-gray-600">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quo quisquam tempore modi iure
                         at possimus fugit placeat perferendis, ducimus aperiam eaque excepturi sapiente atque quos!
@@ -336,7 +349,8 @@
                                 </svg>
                                 <ul x-cloak x-show.transition.origin.top.left="isOpen" @click.away="isOpen = false"
                                     @keydown.escape.window="isOpen = false"
-                                    class="z-10 absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3 ml-8">
+                                    class="z-10 absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3 md:ml-8 top-10
+                                    md:top-6 right-0 md:left-0">
                                     <li><a href="#"
                                             class="hover:bg-gray-100 block trasition duration-150 ease-in px-5 py-3">Mark
                                             as Spam</a></li>
